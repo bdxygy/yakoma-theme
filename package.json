@@ -1,14 +1,17 @@
 {
-  "name": "yakoma",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/bdxygy/yakoma-theme.git",
-  "author": "bdxygy <budisantoso.devapp@gmail.com>",
-  "license": "MIT",
-  "scripts": {
-    "w": "npx tailwindcss -i ./assets/css/main.css -o ./dist/css/src.css --watch --minify"
-  },
-  "devDependencies": {
-    "tailwindcss": "^3.3.3"
-  }
+    "name": "yakoma",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/bdxygy/yakoma-theme.git",
+    "author": "bdxygy <budisantoso.devapp@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "w": "npx tailwindcss -i ./assets/css/main.css -o ./dist/css/src.css --watch --minify",
+        "p": "prettier"
+    },
+    "devDependencies": {
+        "@prettier/plugin-php": "^0.20.1",
+        "prettier": "^3.0.3",
+        "tailwindcss": "^3.3.3"
+    }
 }

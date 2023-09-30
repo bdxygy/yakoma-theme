@@ -1,0 +1,14 @@
+{
+  "name": "yakoma",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/bdxygy/yakoma-theme.git",
+  "author": "bdxygy <budisantoso.devapp@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "w": "npx tailwindcss -i ./assets/css/main.css -o ./dist/css/src.css --watch --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}

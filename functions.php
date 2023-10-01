@@ -22,3 +22,12 @@ function yakoma_custom_scripts()
 }
 
 add_action('wp_enqueue_scripts', 'yakoma_custom_scripts');
+
+function yakoma_features()
+{
+    register_nav_menu('mainHeaderMenuNavigation', 'Main Header Menu Navigation');
+    add_theme_support('title-tag');
+}
+
+
+add_action('after_setup_theme', 'yakoma_features');

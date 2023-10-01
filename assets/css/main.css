@@ -8,4 +8,16 @@
         @apply lg:px-8;
         @apply xl:px-0;
     }
+
+    .nav-dekstop-ul {
+        @apply hidden md:flex items-center gap-7 justify-center text-lg;
+    }
+
+    .nav-dekstop-ul .nav-item {
+        @apply cursor-pointer font-semibold hover:text-red-500;
+    }
+
+    .nav-dekstop-ul .nav-item:last-child {
+        @apply cursor-pointer px-7 py-2 border border-red-500 rounded-full bg-red-500 hover:bg-red-500/25 text-white font-semibold;
+    }
 }

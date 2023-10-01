@@ -1,5 +1,14 @@
 <?
-date_default_timezone_set('Asia/Jakarta')
+date_default_timezone_set('Asia/Jakarta');
+
+$headerMenus = wp_get_nav_menu_items('main-menu-header');
+
+foreach ($headerMenus as $menu) {
+    var_dump("===============\n");
+
+    var_dump($menu);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -10,9 +19,12 @@ date_default_timezone_set('Asia/Jakarta')
 </head>
 
 <body class="relative">
-    <div id="mobile-navigation" class="fixed inset-0 hidden bg-white z-10 p-4">
+    <div id="mobile-navigation" class="fixed inset-0 hidden bg-slate-950 text-white z-10 p-4">
         <button id="mobile-x-button" class="h-[40px] flex justify-end items-center w-full">
-            <img src="<?= get_template_directory_uri() ?>/dist/icons/x.svg" alt="" class="h-full">
+            <svg class="h-full" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+
         </button>
 
         <ul class="flex flex-col items-center gap-7 justify-center text-lg">
@@ -20,7 +32,7 @@ date_default_timezone_set('Asia/Jakarta')
             <li class="cursor-pointer"><a class="font-semibold hover:text-black/60" href="#">Programs</a></li>
             <li class="cursor-pointer"><a class="font-semibold hover:text-black/60" href="#">Kajian</a></li>
             <li class="cursor-pointer"><a class="font-semibold hover:text-black/60" href="#">Ceramah</a></li>
-            <li class=" cursor-pointer px-4 py-2 border border-red-500 rounded-full text-red-500 hover:bg-red-500/25"><a class="font-semibold " href="#">Donasi</a></li>
+            <li class=" cursor-pointer px-6 py-2 border border-red-500 rounded-full bg-red-500 hover:bg-red-500/25"><a class="font-semibold " href="#">Donasi</a></li>
             <!-- [&:last-child]:text-red-100 -->
             <!-- <li class="cursor-pointer"><a class="font-semibold hover:text-black/60 flex items-center" href="#">Cari <img class="h-[18px] ml-4" src="<?= get_template_directory_uri() ?>/dist/icons/scope.svg" alt=""></a></li> -->
         </ul>
@@ -36,15 +48,22 @@ date_default_timezone_set('Asia/Jakarta')
             </div>
         </div>
         <!-- Articles Highlight End -->
+
         <nav class="h-[90px] container-page flex items-center justify-between">
             <a href="#"><img src="<?= get_template_directory_uri() ?>/dist/images/logo.png" alt="Yakoma Logo" class="h-[50px] flex items-center"></a>
-            <ul class="hidden md:flex items-center gap-7 justify-center text-lg">
-                <li class="cursor-pointer"><a class="font-semibold hover:text-red-500" href="#">Home</a></li>
-                <li class="cursor-pointer"><a class="font-semibold hover:text-red-500" href="#">Programs</a></li>
-                <li class="cursor-pointer"><a class="font-semibold hover:text-red-500" href="#">Kajian</a></li>
-                <li class="cursor-pointer"><a class="font-semibold hover:text-red-500" href="#">Bedah Buku</a></li>
-                <li class="cursor-pointer"><a class="font-semibold hover:text-red-500" href="#">Ceramah</a></li>
-                <li class=" cursor-pointer px-4 py-2 border border-red-500 rounded-full text-red-500 hover:bg-red-500/25"><a class="font-semibold " href="#">Donasi</a></li>
+            <ul class="nav-dekstop-ul">
+                <?
+                foreach ($headerMenus as $menu) {
+                ?>
+                    <li class="nav-item"><a href="<?= $menu->url; ?>"><?= $menu->title; ?></a></li>
+                <?
+                }
+                ?>
+
+                <!-- <li class="cursor-pointer font-semibold hover:text-red-500"><a class="" href="#">Kajian</a></li>
+                <li class="cursor-pointer font-semibold hover:text-red-500"><a class="" href="#">Bedah Buku</a></li>
+                <li class="cursor-pointer font-semibold hover:text-red-500"><a class="" href="#">Ceramah</a></li>
+                <li class=" cursor-pointer px-7 py-2 border border-red-500 rounded-full bg-red-500 hover:bg-red-500/25 text-white"><a class="font-semibold " href="#">Donasi</a></li> -->
                 <!-- [&:last-child]:text-red-100 -->
                 <!-- <li class="cursor-pointer"><a class="font-semibold hover:text-black/60" href="#">Ceramah</a></li> -->
             </ul>

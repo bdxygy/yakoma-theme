@@ -26,30 +26,32 @@ date_default_timezone_set('Asia/Jakarta')
         </ul>
     </div>
     <!-- Navigation -->
-    <section class="sticky top-0 bg-white">
+    <section class="sticky top-0 text-white bg-slate-950">
         <!-- Articles Highlight -->
-
-        <div class="container-page flex items-center w-full overflow-hidden border-b">
-            <div id="current-time" class="hidden mr-2 md:block font-semibold"></div>
-            <div class="bg-red-500 p-2 whitespace-nowrap text-white font-semibold">Article Terbaru</div>
-            <div id="news-articles" class="p-2 whitespace-nowrap font-semibold"></div>
+        <div class="bg-white text-black">
+            <div class="container-page flex items-center w-full overflow-hidden  p-0">
+                <div id="current-time" class="hidden mr-2 md:block font-semibold"></div>
+                <div class="bg-red-500 p-2 whitespace-nowrap text-white font-semibold">Article Terbaru</div>
+                <div id="news-articles" class="p-2 whitespace-nowrap font-semibold"></div>
+            </div>
         </div>
-
         <!-- Articles Highlight End -->
         <nav class="h-[90px] container-page flex items-center justify-between">
             <a href="#"><img src="<?= get_template_directory_uri() ?>/dist/images/logo.png" alt="Yakoma Logo" class="h-[50px] flex items-center"></a>
             <ul class="hidden md:flex items-center gap-7 justify-center text-lg">
-                <li class="cursor-pointer"><a class="font-semibold hover:text-black/60" href="#">Home</a></li>
-                <li class="cursor-pointer"><a class="font-semibold hover:text-black/60" href="#">Programs</a></li>
-                <li class="cursor-pointer"><a class="font-semibold hover:text-black/60" href="#">Kajian</a></li>
-                <li class="cursor-pointer"><a class="font-semibold hover:text-black/60" href="#">Bedah Buku</a></li>
-                <li class="cursor-pointer"><a class="font-semibold hover:text-black/60" href="#">Ceramah</a></li>
+                <li class="cursor-pointer"><a class="font-semibold hover:text-red-500" href="#">Home</a></li>
+                <li class="cursor-pointer"><a class="font-semibold hover:text-red-500" href="#">Programs</a></li>
+                <li class="cursor-pointer"><a class="font-semibold hover:text-red-500" href="#">Kajian</a></li>
+                <li class="cursor-pointer"><a class="font-semibold hover:text-red-500" href="#">Bedah Buku</a></li>
+                <li class="cursor-pointer"><a class="font-semibold hover:text-red-500" href="#">Ceramah</a></li>
                 <li class=" cursor-pointer px-4 py-2 border border-red-500 rounded-full text-red-500 hover:bg-red-500/25"><a class="font-semibold " href="#">Donasi</a></li>
                 <!-- [&:last-child]:text-red-100 -->
                 <!-- <li class="cursor-pointer"><a class="font-semibold hover:text-black/60" href="#">Ceramah</a></li> -->
             </ul>
-            <button id="mobile-bar-button" class="block md:hidden h-[30px] text-black">
-                <img src="<?= get_template_directory_uri() ?>/dist/icons/bar.svg" alt="" class="h-full w-full">
+            <button id="mobile-bar-button" class="block md:hidden h-[30px]">
+                <svg class="h-full w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentcolor" class="w-5 h-5">
+                    <path fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+                </svg>
             </button>
         </nav>
     </section>

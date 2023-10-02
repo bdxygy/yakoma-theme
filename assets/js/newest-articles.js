@@ -4,7 +4,15 @@ let responseIndex = 0;
 const anchorArticles = document.createElement('a');
 
 const getNewestArticles = function () {
-    fetch(API.POSTS)
+    const url = new URL(API.POSTS);
+    const { searchParams } = url;
+
+    searchParams.set('order', 'desc');
+    searchParams.set('orderby', 'date');
+
+    console.log(url.toString());
+
+    fetch(url.toString())
         .then((response) => response.json())
         .then((response) => {
             if (response.length === 0) return;

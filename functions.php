@@ -27,6 +27,7 @@ function yakoma_features()
 {
     register_nav_menu('mainHeaderMenuNavigation', 'Main Header Menu Navigation');
     add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
 }
 
 

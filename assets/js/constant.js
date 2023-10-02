@@ -1,3 +1,5 @@
+const ROOT_URL = 'http://wp.local';
+
 const API = {
-    POSTS: 'http://wp.local/wp-json/wp/v2/posts',
+    POSTS: `${ROOT_URL}/wp-json/wp/v2/posts`,
 };

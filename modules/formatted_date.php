@@ -1,14 +1,18 @@
-<?php function get_formatted_date(string $date)
-{
-    $dateTimeObj = new DateTime($date, new DateTimeZone('Asia/Jakarta'));
+<?php
 
-    // Timestamp for October 3, 2023
-    $dateFormatted = IntlDateFormatter::formatObject(
-        $dateTimeObj,
-        'eeee, d MMMM y',
-        'id'
-    );
+if (!function_exists('get_formatted_date')) {
+    function get_formatted_date(string $date)
+    {
+        $dateTimeObj = new DateTime($date, new DateTimeZone('Asia/Jakarta'));
 
-    // Format the date into the desired format
-    return $dateFormatted;
+        // Timestamp for October 3, 2023
+        $dateFormatted = IntlDateFormatter::formatObject(
+            $dateTimeObj,
+            'eeee, d MMMM y',
+            'id'
+        );
+
+        // Format the date into the desired format
+        return $dateFormatted;
+    }
 }

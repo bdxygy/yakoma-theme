@@ -1,5 +1,4 @@
 <?php
-require __DIR__ . '/modules/utils.php';
 
 get_header();
 

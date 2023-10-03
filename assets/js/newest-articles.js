@@ -10,14 +10,10 @@ const getNewestArticles = function () {
     searchParams.set('order', 'desc');
     searchParams.set('orderby', 'date');
 
-    console.log(url.toString());
-
     fetch(url.toString())
         .then((response) => response.json())
         .then((response) => {
             if (response.length === 0) return;
-
-            console.log(response);
 
             anchorArticles.href = response[responseIndex].link;
             anchorArticles.innerHTML = response[responseIndex].title.rendered;

@@ -1,4 +1,4 @@
-<?
+<?php
 date_default_timezone_set('Asia/Jakarta');
 
 $headerMenus = wp_get_nav_menu_items('main-menu-header');
@@ -15,12 +15,16 @@ $headerMenus = wp_get_nav_menu_items('main-menu-header');
 <html lang="en">
 
 <head>
-    <? wp_head(); ?>
+    <?php wp_head(); ?>
 </head>
 
 <body class="relative">
+    <div class="hidden bg-blue-500"></div>
+    <div class="hidden bg-red-500"></div>
+    <div class="hidden bg-cyan-500"></div>
+    <div class="hidden bg-zinc-500"></div>
     <!-- Mobile Navigation -->
-    <div id="mobile-navigation" class="fixed inset-0 hidden bg-slate-950 text-white z-10 p-4">
+    <div id="mobile-navigation" class="fixed inset-0 hidden bg-slate-950 text-white z-50 p-4">
         <button id="mobile-x-button" class="h-[40px] flex justify-end items-center w-full">
             <svg class="h-full" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -31,7 +35,7 @@ $headerMenus = wp_get_nav_menu_items('main-menu-header');
             <?
             foreach ($headerMenus as $menu) {
             ?>
-                <li class="nav-item"><a href="<?= $menu->url; ?>"><?= $menu->title; ?></a></li>
+                <li class="nav-item"><a href="<?= $menu->url; ?>"><?= ucwords($menu->title); ?></a></li>
             <?
             }
             ?>
@@ -40,7 +44,7 @@ $headerMenus = wp_get_nav_menu_items('main-menu-header');
     <!-- Mobile Navigation End -->
 
     <!-- Navigation -->
-    <section class="sticky top-0 text-white bg-slate-950">
+    <section class="sticky top-0 text-white bg-slate-950 mb-5 z-20">
         <!-- Articles Highlight -->
         <div class="bg-white text-black">
             <div class="container-page flex items-center w-full overflow-hidden p-0">
@@ -59,19 +63,19 @@ $headerMenus = wp_get_nav_menu_items('main-menu-header');
                 <?
                 foreach ($headerMenus as $menu) {
                 ?>
-                    <? if ($menu->type_label == "Category") : ?>
+                    <?php if ($menu->type_label == "Category") : ?>
                         <li class="nav-item" aria-label="button-link" onclick="getRelatedCategory('<?= $menu->object_id; ?>', '<?= $menu->url; ?>')">
-                            <button class="flex items-center" aria-label="button-link"><?= $menu->title; ?>
+                            <button class="flex items-center" aria-label="button-link"><?= ucwords($menu->title); ?>
                                 <svg aria-label="button-link" class="h-4 w-4 ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                 </svg>
                             </button>
                         </li>
-                    <? else : ?>
+                    <?php else : ?>
                         <li class="nav-item">
-                            <a href="<?= $menu->url; ?>"><?= $menu->title; ?></a>
+                            <a href="<?= $menu->url; ?>"><?= ucwords($menu->title); ?></a>
                         </li>
-                    <? endif; ?>
+                    <?php endif; ?>
                 <?
                 }
                 ?>
@@ -99,4 +103,3 @@ $headerMenus = wp_get_nav_menu_items('main-menu-header');
     </section>
     <!-- Navigation End -->
     <main class="dark:text-white dark:bg-black">
-        <section class="prose-xl container-page">

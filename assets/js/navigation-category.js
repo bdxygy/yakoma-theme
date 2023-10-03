@@ -6,12 +6,10 @@ const categoryListContentView = document.getElementById(
 const toAllCategoryLink = document.getElementById('category-to-all');
 
 const createListContent = function (data) {
-    console.log(data, 'post');
-
     const date = dateFormat(data.date);
     const thumbnail = data._embedded['wp:featuredmedia'][0];
 
-    return `<a href="${data.link}" class="flex flex-col justify-between bg-black group cursor-pointer">
+    return `<a href="${data.link}" class="flex flex-col justify-between bg-black/25 group cursor-pointer">
     <div class="flex w-full flex-col">
         <div class="pt-4 mx-auto mb-4">
             <img src="${thumbnail.source_url}" alt="${thumbnail.alt_text}" class="h-36 w-auto">

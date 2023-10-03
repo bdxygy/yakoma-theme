@@ -24,4 +24,45 @@
     #category-list {
         @apply bg-slate-950 absolute w-full flex-col;
     }
+
+    /* Type Post: Bundle Posts */
+    .bundle-post-container {
+        @apply container-page mb-10;
+    }
+    .bundle-post-container .bundle-post-container-content {
+        @apply grid gap-1 grid-cols-1 lg:grid-cols-4 w-full;
+    }
+
+    .bundle-post-container-content .bundle-post-item {
+        @apply col-span-1 row-span-1 relative cursor-pointer inline-block;
+    }
+
+    .bundle-post-container-content .bundle-post-item.expanded {
+        @apply lg:col-span-2 lg:row-span-2;
+    }
+
+    .bundle-post-item .title-container {
+        @apply absolute bottom-0 inset-x-0 z-10 p-4;
+    }
+
+    .bundle-post-item .title-container h1 {
+        @apply font-semibold text-lg text-white;
+    }
+
+    .bundle-post-item .overlay-background {
+        @apply absolute inset-0 bg-gradient-to-t from-black/80 via-black/70 to-white/0;
+    }
+
+    .bundle-post-item img {
+        @apply w-full;
+    }
+
+    .bundle-post-item:hover .title-container a {
+        @apply opacity-60 translate-y-1 ease-in;
+    }
+
+    .bundle-post-item:hover .overlay-background {
+        @apply from-black/70 via-black/60;
+    }
+    /* Type Post: Bundle Posts End */
 }

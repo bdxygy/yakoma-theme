@@ -1,5 +1,5 @@
-const ROOT_URL = 'http://wp.local';
+export const ROOT_URL = 'http://wp.local';
 
-const API = {
+export const API = {
     POSTS: `${ROOT_URL}/wp-json/wp/v2/posts`,
 };

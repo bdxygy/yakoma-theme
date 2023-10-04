@@ -6,28 +6,25 @@
     "author": "bdxygy <budisantoso.devapp@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "w": "npx tailwindcss -i ./assets/css/main.css -o ./dist/css/src.css --watch --minify",
-        "p": "prettier",
-        "g": "gulp",
-        "t": "terser --compress ecma=2015 --mangle --output ./dist/js/src.min.js -- ./assets/build/src.js",
-        "b": "yarn g && yarn t"
+        "tailwind": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/src.css --watch --minify",
+        "prettier": "prettier",
+        "webpack": "npx webpack --config webpack.config.js --watch",
+        "start": "yarn tailwind && yarn webpack"
     },
     "devDependencies": {
         "@babel/core": "^7.23.0",
         "@babel/preset-env": "^7.22.20",
         "@prettier/plugin-php": "^0.20.1",
         "@tailwindcss/typography": "^0.5.10",
-        "daisyui": "^3.8.2",
-        "gulp": "^4.0.2",
-        "gulp-babel": "^8.0.0",
-        "gulp-concat": "^2.6.1",
-        "gulp-terser": "^2.1.0",
-        "gulp-uglify": "^3.0.2",
-        "postcss-import": "^15.1.0",
-        "postcss-nesting": "^12.0.1",
+        "babel-loader": "^9.1.3",
+        "css-loader": "^6.8.1",
+        "esbuild-loader": "^4.0.2",
+        "mini-css-extract-plugin": "^2.7.6",
         "prettier": "^3.0.3",
-        "readable-stream": "^4.4.2",
+        "style-loader": "^3.3.3",
         "tailwindcss": "^3.3.3",
-        "terser": "^5.20.0"
+        "terser-webpack-plugin": "^5.3.9",
+        "webpack": "^5.88.2",
+        "webpack-cli": "^5.1.4"
     }
 }

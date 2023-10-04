@@ -2,12 +2,8 @@
 date_default_timezone_set('Asia/Jakarta');
 
 $headerMenus = wp_get_nav_menu_items('main-menu-header');
-
-// foreach ($headerMenus as $menu) {
-//     var_dump("===============\n");
-
-//     var_dump($menu);
-// }
+$custom_logo_id = get_theme_mod('custom_logo');
+$image = wp_get_attachment_image_src($custom_logo_id, 'full');
 
 ?>
 
@@ -57,15 +53,21 @@ $headerMenus = wp_get_nav_menu_items('main-menu-header');
 
         <!-- Navigation List -->
         <nav class="h-[90px] container-page flex items-center justify-between">
-            <a href="<?= site_url(); ?>"><img src="<?= get_template_directory_uri() ?>/dist/images/logo.png" alt="Yakoma Logo" class="h-[50px] flex items-center"></a>
+            <?php if (has_custom_logo()) : ?>
+                <a href="<?= site_url() ?>">
+                    <img src="<?= $image[0]; ?>" alt="<?= get_bloginfo('name'); ?>" class="h-[50px] w-fit">
+                </a>
+            <?php else : ?>
+                <h1 class="font-bold"><?= ucwords(get_bloginfo('name')); ?></h1>
+            <?php endif; ?>
 
             <ul class="nav-dekstop-ul">
                 <?
                 foreach ($headerMenus as $menu) {
                 ?>
                     <?php if ($menu->type_label == "Category") : ?>
-                        <li class="nav-item" aria-label="button-link" onclick="getRelatedCategory('<?= $menu->object_id; ?>', '<?= $menu->url; ?>')">
-                            <button class="flex items-center" aria-label="button-link"><?= ucwords($menu->title); ?>
+                        <li class="nav-item" aria-label="button-link">
+                            <button onclick="getRelatedCategory('<?= $menu->object_id; ?>', '<?= $menu->url; ?>')" class="flex items-center" aria-label="button-link"><?= ucwords($menu->title); ?>
                                 <svg aria-label="button-link" class="h-4 w-4 ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                 </svg>

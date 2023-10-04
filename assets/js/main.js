@@ -8,3 +8,5 @@ const mobileNavigationToggler = function () {
 
 mobileButton.addEventListener('click', mobileNavigationToggler);
 mobileXButton.addEventListener('click', mobileNavigationToggler);
+
+window.mobileNavigationToggler = mobileNavigationToggler;

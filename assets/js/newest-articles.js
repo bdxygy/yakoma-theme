@@ -1,3 +1,5 @@
+import { API } from './constant';
+
 const newestArticleContainer = document.getElementById('news-articles');
 let responseIndex = 0;
 

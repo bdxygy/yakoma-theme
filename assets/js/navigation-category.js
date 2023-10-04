@@ -1,3 +1,6 @@
+const { API } = require('./constant');
+const { dateFormat } = require('./function');
+
 const categoryListView = document.getElementById('category-list');
 const categoryListContentView = document.getElementById(
     'category-list-content',
@@ -66,3 +69,6 @@ document.addEventListener('click', function (event) {
 const destroyRelatedCategory = function () {
     categoryListView.classList.replace('flex', 'hidden');
 };
+
+window.getRelatedCategory = getRelatedCategory;
+window.destroyRelatedCategory = destroyRelatedCategory;

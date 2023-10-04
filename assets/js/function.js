@@ -1,13 +1,13 @@
-const dateOption = {
+export const dateOption = {
     month: 'long',
     day: '2-digit',
     year: 'numeric',
     weekday: 'long',
 };
 
-const dateLocale = 'id';
+export const dateLocale = 'id';
 
-const dateFormat = function (dateString) {
+export const dateFormat = function (dateString) {
     const date = String(dateString);
 
     if (!dateString)

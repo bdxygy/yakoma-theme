@@ -17,7 +17,7 @@
         @apply cursor-pointer font-semibold hover:text-red-500;
     }
 
-    .nav-item:last-child {
+    .nav-item:last-child a {
         @apply cursor-pointer px-7 py-2 border border-red-500 rounded-full bg-red-500 hover:bg-red-500/25 text-white font-semibold;
     }
 

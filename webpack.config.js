@@ -3,16 +3,16 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { EsbuildPlugin } = require('esbuild-loader');
 
 module.exports = {
-    entry: './assets/js/index.js',
+    entry: './assets/index.js',
     mode: 'production',
     output: {
         filename: 'main.min.js',
         path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-        new MiniCssExtractPlugin({
-            filename: 'main.min.css',
-        }),
+        // new MiniCssExtractPlugin({
+        //     filename: 'main.min.css',
+        // }),
     ],
     module: {
         rules: [
@@ -26,7 +26,11 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+                use: [
+                    // MiniCssExtractPlugin.loader,
+                    'style-loader',
+                    'css-loader',
+                ],
             },
         ],
     },

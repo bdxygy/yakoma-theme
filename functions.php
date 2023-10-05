@@ -1,14 +1,14 @@
 <?php
 
-function yakoma_custom_styles()
-{
-    wp_enqueue_style(
-        'yakoma_style',
-        get_template_directory_uri() . '/dist/main.min.css'
-    );
-}
+// function yakoma_custom_styles()
+// {
+//     wp_enqueue_style(
+//         'yakoma_style',
+//         get_template_directory_uri() . '/dist/main.min.css'
+//     );
+// }
 
-add_action('wp_enqueue_scripts', 'yakoma_custom_styles');
+// add_action('wp_enqueue_scripts', 'yakoma_custom_styles');
 
 function yakoma_custom_scripts()
 {

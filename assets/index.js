@@ -1,0 +1,9 @@
+import('./js/constant');
+import('./js/function');
+import('./js/navigation-category');
+import('./js/newest-articles');
+import('./js/time');
+import('./js/main');
+import('./js/swiper');
+import('./css/src.css');
+import('./css/carousel.css');

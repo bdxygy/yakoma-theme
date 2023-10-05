@@ -38,14 +38,14 @@ if (!empty($post_response)) {
     <div class="bundle-post-container-content">
         <?php if (!empty($post_response)) : ?>
             <?php foreach ($post_response as $index => $post) : ?>
-                <a href="<?= $post->guid; ?>" class="bundle-post-item <?= $index == 0 ? 'expanded' : ''; ?>">
+                <a href="<?= $post->guid; ?>" class="bundle-post-item relative <?= $index == 0 ? 'expanded' : ''; ?>">
                     <div class="absolute bg-<?= $cat_color; ?>-500 p-1 px-2 text-white font-semibold right-0 m-4 text-xs"><?= strtoupper($cat_name); ?></div>
                     <div class="title-container">
                         <small class="text-white"><?= get_formatted_date($post->post_date); ?></small>
                         <h1><?= $post->post_title; ?></h1>
                     </div>
                     <div class="overlay-background"></div>
-                    <img src="<?= $post->thumbnail; ?>" alt="">
+                    <img src="<?= $post->thumbnail; ?>" style="object-fit: cover;" alt="<?= $post->post_title; ?>" class="">
                 </a>
             <?php endforeach; ?>
         <?php else : ?>

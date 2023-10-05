@@ -20,7 +20,7 @@ $image = wp_get_attachment_image_src($custom_logo_id, 'full');
     <div class="hidden bg-cyan-500"></div>
     <div class="hidden bg-zinc-500"></div>
     <!-- Mobile Navigation -->
-    <div id="mobile-navigation" class="fixed inset-0 hidden bg-slate-950 text-white z-50 p-4">
+    <div id="mobile-navigation" class="fixed inset-0 hidden lg:hidden bg-slate-950 text-white z-50 p-4">
         <button id="mobile-x-button" class="h-[40px] flex justify-end items-center w-full">
             <svg class="h-full" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />

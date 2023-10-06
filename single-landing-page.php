@@ -6,6 +6,8 @@ get_header();
 
 $featured_post = get_field('content');
 
-get_landing_content($featured_post);
+var_dump($featured_post);
+
+// get_landing_content($featured_post);
 
 get_footer();

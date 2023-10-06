@@ -7,6 +7,12 @@ if (!function_exists('get_landing_content')) {
         if (!is_object($post_feature) && count($post_feature) > 0) {
             foreach ($post_feature as $index => $post) {
                 switch ($post->post_type) {
+                    case 'grid-post':
+                        get_template_part('templates/grid-post', null, [
+                            "post_data" => $post
+                        ]);
+                        unset($post_feature[$index]);
+                        break;
                     case 'bundle-post':
                         get_template_part('templates/bundle-post', null, [
                             "category_id" => $post->category,

@@ -41,3 +41,11 @@ function yakoma_features()
 
 
 add_action('after_setup_theme', 'yakoma_features');
+
+
+function enable_page_excerpts()
+{
+    add_post_type_support('page', 'excerpt');
+    add_post_type_support('landing-page', 'excerpt');
+}
+add_action('init', 'enable_page_excerpts');

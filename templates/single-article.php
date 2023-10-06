@@ -11,7 +11,7 @@ while (have_posts()) {
 
 ?>
 
-    <article class="prose-lg prose-headings:font-semibold container-page">
+    <article class="prose prose-headings:font-semibold container-page">
         <h1><?php the_title() ?></h1>
 
         <?php if ($thumbnail) : ?>

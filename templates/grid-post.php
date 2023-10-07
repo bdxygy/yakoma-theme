@@ -13,8 +13,8 @@ $posts = get_grid_content($post);
 
 ?>
 
-<div class="container-page mb-10">
-    <h1 class="carousel-title relative font-semibold pl-3"><?= strtoupper($post->post_title); ?></h1>
+<div class="container-page mb-10 border p-4 ">
+    <h1 class="carousel-title relative font-semibold pl-3 py-1"><?= strtoupper($post->post_title); ?></h1>
     <div class="grid w-full grid-col-1 lg:grid-cols-2 gap-4">
         <?php foreach ($posts as $index => $post) : ?>
             <a href="<?= $post['guid']; ?>" class="flex flex-col w-full relative group">

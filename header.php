@@ -1,7 +1,22 @@
 <?php
 date_default_timezone_set('Asia/Jakarta');
 
-$headerMenus = wp_get_nav_menu_items('main-menu-header');
+$wp_menu_name = wp_get_nav_menu_name('main-header-menu-navigation');
+
+$wp_menu_object = wp_get_nav_menu_object($wp_menu_name);
+
+
+$headerMenus = wp_get_nav_menu_items($wp_menu_object->term_id);
+
+// echo '<pre>';
+// foreach ($headerMenus as $menu) {
+//     var_dump($menu->title);
+//     var_dump($menu->url);
+//     var_dump($menu->type_label);
+// }
+// echo '</pre>';
+
+
 $custom_logo_id = get_theme_mod('custom_logo');
 $image = wp_get_attachment_image_src($custom_logo_id, 'full');
 
@@ -29,13 +44,11 @@ $image = wp_get_attachment_image_src($custom_logo_id, 'full');
         </button>
 
         <ul class="flex flex-col items-center gap-7 justify-center text-lg">
-            <?
-            foreach ($headerMenus as $menu) {
-            ?>
-                <li class="nav-item"><a href="<?= $menu->url; ?>"><?= ucwords($menu->title); ?></a></li>
-            <?
-            }
-            ?>
+            <?php foreach ($headerMenus as $menu) : ?>
+                <li class="nav-item">
+                    <a href="<?= $menu->url; ?>"><?= ucwords($menu->title); ?></a>
+                </li>
+            <?php endforeach; ?>
         </ul>
     </div>
     <!-- Mobile Navigation End -->
@@ -63,9 +76,7 @@ $image = wp_get_attachment_image_src($custom_logo_id, 'full');
             <?php endif; ?>
 
             <ul class="nav-dekstop-ul">
-                <?
-                foreach ($headerMenus as $menu) {
-                ?>
+                <?php foreach ($headerMenus as $menu) : ?>
                     <?php if ($menu->type_label == "Category") : ?>
                         <li class="nav-item" aria-label="button-link">
                             <button onclick="getRelatedCategory('<?= $menu->object_id; ?>', '<?= $menu->url; ?>')" class="flex items-center" aria-label="button-link"><?= ucwords($menu->title); ?>
@@ -79,9 +90,7 @@ $image = wp_get_attachment_image_src($custom_logo_id, 'full');
                             <a href="<?= $menu->url; ?>"><?= ucwords($menu->title); ?></a>
                         </li>
                     <?php endif; ?>
-                <?
-                }
-                ?>
+                <?php endforeach; ?>
             </ul>
 
             <button id="mobile-bar-button" class="block md:hidden h-[30px]">

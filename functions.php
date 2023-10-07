@@ -25,7 +25,11 @@ add_action('wp_enqueue_scripts', 'yakoma_custom_scripts');
 
 function yakoma_features()
 {
-    register_nav_menu('mainHeaderMenuNavigation', 'Main Header Menu Navigation');
+    // register_nav_menu('mainHeaderMenuNavigation', 'Main Header Menu Navigation');
+    register_nav_menus([
+        'main-header-menu-navigation' => __("New Main Header Menu Navigation", 'Yakoma-theme'),
+    ]);
+
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
 

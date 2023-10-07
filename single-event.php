@@ -48,7 +48,7 @@ while (have_posts()) {
         <?php the_content() ?>
     </article>
 
-    <div class="container-page mb-10 flex w-full items-center">
+    <div class="container-page mb-10 flex w-full flex-col">
         <div class="flex w-full h-full">
             <div class="flex flex-col w-full">
                 <div class="font-semibold whitespace-nowrap">Nama :</div>
@@ -66,8 +66,8 @@ while (have_posts()) {
                 <div class="font-semibold whitespace-nowrap">Lokasi :</div>
                 <div><?= $location ?></div>
             </div>
-        </div>
-        <div class="hidden lg:flex flex-col items-center justify-center w-full h-full">
+        </div><br>
+        <div class="flex flex-col items-center justify-center w-full h-full mt-4">
             <div class="flex items-center">
                 <h1 class="font-semibold mr-4">Tambahkan ke Kalender</h1> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 3.75V16.5L12 14.25 7.5 16.5V3.75m9 0H18A2.25 2.25 0 0120.25 6v12A2.25 2.25 0 0118 20.25H6A2.25 2.25 0 013.75 18V6A2.25 2.25 0 016 3.75h1.5m9 0h-9" />

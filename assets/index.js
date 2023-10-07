@@ -7,4 +7,3 @@ import('./js/main');
 import('./js/swiper');
 import('./css/src.css');
 import('./css/carousel.css');
-import('add-to-calendar-button');
